@@ -1,6 +1,6 @@
-# react-tsx-hooks-snippets README
+# React Tsx Hooks Snippets
 
-This is the README for your extension "react-tsx-hooks-snippets". After writing up a brief description, we recommend including the following sections.
+This extension provides you react/redux and hooks in typescript for VS code
 
 ## Features
 
@@ -8,7 +8,7 @@ Describe specific features of your extension including screenshots of your exten
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+\!\[logo\]\(images/logo.png\)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
