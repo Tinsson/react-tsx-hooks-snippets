@@ -1,20 +1,27 @@
 {
-    "name": "react-tsx-hooks-snippets",
-    "displayName": "React Tsx Hooks Snippets",
-    "description": "This extension provides you react/redux and hooks in typescript for VS code",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.51.0"
-    },
-    "categories": [
-        "Snippets"
-    ],
-    "contributes": {
-        "snippets": [
-            {
-                "language": "typescript",
-                "path": "./snippets/snippets.code-snippets"
-            }
-        ]
-    }
+  "name": "react-tsx-hooks-snippets",
+  "displayName": "React Tsx Hooks Snippets",
+  "description": "This extension provides you react/redux and hooks in typescript for VS code",
+  "scripts": {
+    "build": "node compiler.js"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
 }

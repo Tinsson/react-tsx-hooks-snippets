@@ -1,0 +1,344 @@
+{
+  "BindThis": {
+    "prefix": "bnd",
+    "body": "this.${1:methodName} = this.${1:methodName}.bind(this)$0",
+    "description": "Binds this to a method"
+  },
+  "DestructProps": {
+    "prefix": "ctp",
+    "body": "const { $1 } = this.props",
+    "description": "variable using props destructing"
+  },
+  "destructState": {
+    "prefix": "cts",
+    "body": "const { $1 } = this.state",
+    "description": "variable using state destructing"
+  },
+  "ImportHooksAll": {
+    "prefix": "imhall",
+    "body": "import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react'",
+    "description": "Import All Hooks"
+  },
+  "ImportReactHooksState": {
+    "prefix": "imhs",
+    "body": "import React, { useState } from 'react'",
+    "description": "import react and useState"
+  },
+  "ImportReactHooksStateEffect": {
+    "prefix": "imhs",
+    "body": "import React, { useState, useEffect } from 'react'",
+    "description": "import react and useState, useEffect"
+  },
+  "ImportReact": {
+    "prefix": "imr",
+    "body": "import React from 'react'",
+    "description": "import react"
+  },
+  "ImportReactComponent": {
+    "prefix": "imr",
+    "body": "import React, { Component } from 'react'",
+    "description": "import react and component"
+  },
+  "ReactArrowFunctionComponentTypeScript": {
+    "prefix": "rafcts",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface Props {",
+      "  ",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "React Arrow Function Component"
+  },
+  "ReactClassComponentTypeScript": {
+    "prefix": "rccts",
+    "body": [
+      "import React, { Component } from 'react'",
+      "",
+      "interface Props {",
+      "  ",
+      "}",
+      "interface State {",
+      "  ",
+      "}",
+      "",
+      "class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+      "  state = {}",
+      "",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        $0",
+      "      </div>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "React class component with TypeScript interfaces"
+  },
+  "ReactClassPureComponent": {
+    "prefix": "rcpcts",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "",
+      "interface Props {",
+      "  ",
+      "}",
+      "",
+      "class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        $0",
+      "      </div>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "React Class Pure Component"
+  },
+  "ReactFunctionComponentTypescript": {
+    "prefix": "rfcts",
+    "body": [
+      "import React, { ReactElement } from 'react'",
+      "",
+      "interface Props {",
+      "  ",
+      "}",
+      "",
+      "function ${1:${TM_FILENAME_BASE}}({}: Props): ReactElement {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "React function component with TypeScript interfaces"
+  },
+  "ReactFunctionMemoComponent": {
+    "prefix": "rfmcts",
+    "body": [
+      "import React, { memo } from 'react'",
+      "",
+      "interface Props {",
+      "  ",
+      "}",
+      "",
+      "export default memo(function ${1:${TM_FILENAME_BASE}}({}: Props) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "})",
+      ""
+    ],
+    "description": "React Function Memo Component"
+  },
+  "useCallback": {
+    "prefix": "uscb",
+    "body": [
+      "const ${1:memoizedCallback} = useCallback(",
+      "  () => {",
+      "    ${2:doSomething}",
+      "  },",
+      "  [${3:deps}],",
+      ")"
+    ],
+    "description": "react useCallback"
+  },
+  "useContext": {
+    "prefix": "usctx",
+    "body": "const ${1:context} = useContext(${2:contextValue})",
+    "description": "react useContext"
+  },
+  "useDebugValue": {
+    "prefix": "usdbgv",
+    "body": "useDebugValue(${1:value})",
+    "description": "react useDebugValue"
+  },
+  "useEffect": {
+    "prefix": "use",
+    "body": [
+      "useEffect(() => {",
+      "  ${1:effect}",
+      "  return () => {",
+      "    ${2:cleanup}",
+      "  };",
+      "}, [${3:deps}]);"
+    ],
+    "description": "React useEffect"
+  },
+  "useImperativeHandle": {
+    "prefix": "usimphd",
+    "body": [
+      "useImperativeHandle(",
+      "  ${1:ref},",
+      "  () => {",
+      "    ${2:handler}",
+      "  },",
+      "  [${3:deps}],",
+      ")"
+    ],
+    "description": "react useImperativeHandle"
+  },
+  "useLayoutEffect": {
+    "prefix": "usle",
+    "body": [
+      "useLayoutEffect(() => {",
+      "  ${1:effect}",
+      "  return () => {",
+      "    ${2:cleanup}",
+      "  };",
+      "}, [${3:deps}]);"
+    ],
+    "description": "react useLayoutEffect"
+  },
+  "useMemo": {
+    "prefix": "usmm",
+    "body": "const ${1:memoizedValue} = useMemo(() => ${2:computedLogic}), [${3:deps}])",
+    "description": "react useMemo"
+  },
+  "useReducer": {
+    "prefix": "usrdcer",
+    "body": "const [${1:state},${2: dispatch}] = useReducer(${3:reducer}, ${4:initialArg}, ${5:init});",
+    "description": "React useReducer"
+  },
+  "useRef": {
+    "prefix": "usref",
+    "body": "const ${1:ref} = useRef<${3:type}>(${2|initialValue,null,0|})",
+    "description": "react useRef"
+  },
+  "useState": {
+    "prefix": "uss",
+    "body": "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<${3:type}>(${2:initialState})",
+    "description": "Hooks useState"
+  },
+  "ImportReduxHooks": {
+    "prefix": "imrdxhk",
+    "body": "import { useSelector, useDispatch } from 'react-redux'",
+    "description": "import redux hooks"
+  },
+  "React Redux Class Component": {
+    "prefix": "rcrdxts",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { connect } from 'react-redux'",
+      "",
+      "interface Props {",
+      "  ",
+      "}",
+      "interface State {",
+      "  ",
+      "}",
+      "",
+      "export class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+      "  state = {}",
+      "",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        $0",
+      "      </div>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "  ",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "  ",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})",
+      ""
+    ],
+    "description": "React Redux Class Component With Connect"
+  },
+  "ReduxAction": {
+    "prefix": "rdxact",
+    "body": [
+      "dispatch({",
+      "  type: ${1:type},",
+      "  payload: {",
+      "    ${2}",
+      "  }",
+      "})",
+      ""
+    ],
+    "description": "Redux Action"
+  },
+  "ReduxReducer": {
+    "prefix": "rdxrdcer",
+    "body": [
+      "const initialState = {",
+      "",
+      "}",
+      "",
+      "export default (state = initialState, { type, payload }) => {",
+      "  switch (type) {",
+      "    case ${1:typeName}:",
+      "      return { ...state, ...payload }",
+      "    default:",
+      "      return state",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "redux reducer"
+  },
+  "ReduxSelector": {
+    "prefix": "rdxsltor",
+    "body": [
+      "import { createSelector } from 'reselect'",
+      "",
+      "export const ${1:selectorName} = createSelector(",
+      "  state => state.${2:selector},",
+      ")"
+    ],
+    "description": "redux selector with reselect"
+  },
+  "useDispatch": {
+    "prefix": "usdpch",
+    "body": "const ${1:dispatch} = useDispatch($2)",
+    "description": "react-redux useDispatch"
+  },
+  "useSelector": {
+    "prefix": "ussltor",
+    "body": "const ${1:status} = useSelector(state => state.${1:status}) as ${2:type}",
+    "description": "react-redux useSelector"
+  },
+  "ExportInterface": {
+    "prefix": "expinf",
+    "body": "export interface ${1:${TM_FILENAME_BASE}} {$0}",
+    "description": "Export Interface"
+  },
+  "ExportType": {
+    "prefix": "exptp",
+    "body": "export type ${1:${TM_FILENAME_BASE}} = {$0}",
+    "description": "Export Type"
+  }
+}
