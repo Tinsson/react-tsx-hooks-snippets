@@ -1,65 +1,136 @@
 # React Tsx Hooks Snippets
 
-This extension provides you react/redux and hooks in typescript for VS code
+React Tsx Hooks Snippets 是一个 VS Code 代码片段扩展，提供 React、React Hooks、Redux 和 TypeScript/TSX 常用模板。扩展支持 `typescript` 和 `typescriptreact` 文件。
 
-## Features
+![logo](images/logo.png)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## 功能特性
 
-For example if there is an image subfolder under your extension project workspace:
+- 提供 React 函数组件、类组件、memo 组件和 PureComponent 模板。
+- 提供 React 19 Hooks 片段：`useState`、`useEffect`、`useActionState`、`useOptimistic`、`useTransition`、`useSyncExternalStore` 等。
+- 提供 Redux 常用片段：action、reducer、selector、`useDispatch`、`useSelector`、connect 类组件。
+- 提供 TypeScript 导出片段：`interface` 和 `type`。
 
-\!\[logo\]\(images/logo.png\)
+## 使用方式
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+在 `.ts` 或 `.tsx` 文件中输入片段前缀，然后选择 VS Code 提示项并按 `Tab` 或 `Enter` 展开。
 
-## Requirements
+示例：
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+```tsx
+// 输入 rafcts 展开 React TSX 函数组件
+const ${1:${TM_FILENAME_BASE}} = (props: Props) => {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+```
 
-## Extension Settings
+## 片段列表
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### React
 
-For example:
+| 前缀 | 名称 | 说明 |
+| --- | --- | --- |
+| `rafcts` | ReactArrowFunctionComponentTypeScript | React 箭头函数组件 |
+| `rfcts` | ReactFunctionComponentTypescript | React 函数组件 |
+| `rfmcts` | ReactFunctionMemoComponent | React memo 函数组件 |
+| `rccts` | ReactClassComponentTypeScript | React TypeScript 类组件 |
+| `rcpcts` | ReactClassPureComponent | React PureComponent 类组件 |
+| `imr` | ImportReact / ImportReactComponent | 导入 React 或 React Component |
+| `imhall` | ImportHooksAll | 导入常用 React Hooks |
+| `imhs` | ImportReactHooksState / Effect | 导入 `useState` 或 `useState/useEffect` |
+| `bnd` | BindThis | 绑定 class method 的 `this` |
+| `ctp` | DestructProps | 解构 `this.props` |
+| `cts` | destructState | 解构 `this.state` |
 
-This extension contributes the following settings:
+### Hooks
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+| 前缀 | 片段 |
+| --- | --- |
+| `uss` | `useState` |
+| `use` | `useEffect` |
+| `usle` | `useLayoutEffect` |
+| `uscb` | `useCallback` |
+| `usmm` | `useMemo` |
+| `usref` | `useRef` |
+| `usctx` | `useContext` |
+| `usrdcer` | `useReducer` |
+| `usimphd` | `useImperativeHandle` |
+| `usdbgv` | `useDebugValue` |
+| `usactst` | `useActionState` |
+| `usdfrv` | `useDeferredValue` |
+| `useevt` | `useEffectEvent` |
+| `usid` | `useId` |
+| `usinsfx` | `useInsertionEffect` |
+| `usopt` | `useOptimistic` |
+| `ussxstr` | `useSyncExternalStore` |
+| `ustrs` | `useTransition` |
+| `usfmsts` | `useFormStatus` (`react-dom`) |
 
-## Known Issues
+### Redux 与 TypeScript
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+| 前缀 | 名称 | 说明 |
+| --- | --- | --- |
+| `imrdxhk` | ImportReduxHooks | 导入 Redux hooks |
+| `usdpch` | useDispatch | `react-redux` 的 `useDispatch` |
+| `ussltor` | useSelector | `react-redux` 的 `useSelector` |
+| `rdxact` | ReduxAction | Redux action |
+| `rdxrdcer` | ReduxReducer | Redux reducer |
+| `rdxsltor` | ReduxSelector | reselect selector |
+| `rcrdxts` | React Redux Class Component | connect 类组件 |
+| `expinf` | ExportInterface | 导出 interface |
+| `exptp` | ExportType | 导出 type |
 
-## Release Notes
+## 开发与构建
 
-Users appreciate release notes as you update your extension.
+片段源码位于 `example/` 目录，按 `react/`、`redux/`、`typescript/` 分类。构建脚本 `compiler.js` 会读取示例文件中的元数据并生成 `snippets/snippets.json`。
 
-### 1.0.0
+```bash
+npm run build
+```
 
-Initial release of ...
+新增片段时，请在 `example/` 下创建 `.tsx` 文件，并在文件顶部添加：
 
-### 1.0.1
+```tsx
+// @name: SnippetName
+// @prefix: prefix
+// @description: Snippet description
+```
 
-Fixed issue #.
+随后运行 `npm run build`，并在 VS Code Extension Host 中验证展开效果。
 
-### 1.1.0
+## English
 
-Added features X, Y, and Z.
+React Tsx Hooks Snippets is a VS Code snippets extension for React, React Hooks, Redux, and TypeScript/TSX. It contributes snippets to both `typescript` and `typescriptreact` files.
 
------------------------------------------------------------------------------------------------------------
+### Features
 
-## Working with Markdown
+- React component templates for function components, class components, memo components, and PureComponent.
+- React 19 Hooks snippets, including `useState`, `useEffect`, `useActionState`, `useOptimistic`, `useTransition`, and `useSyncExternalStore`.
+- Redux snippets for actions, reducers, selectors, `useDispatch`, `useSelector`, and connected class components.
+- TypeScript export snippets for `interface` and `type`.
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+### Usage
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+Type a snippet prefix in a `.ts` or `.tsx` file, then select the VS Code suggestion and press `Tab` or `Enter`.
 
-### For more information
+Common prefixes:
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- React components: `rafcts`, `rfcts`, `rfmcts`, `rccts`, `rcpcts`
+- Hooks: `uss`, `use`, `usle`, `uscb`, `usmm`, `usref`, `usctx`, `usrdcer`, `usactst`, `usopt`, `ustrs`
+- React 19 / DOM hooks: `usdfrv`, `useevt`, `usid`, `usinsfx`, `ussxstr`, `usfmsts`
+- Redux: `rdxact`, `rdxrdcer`, `rdxsltor`, `usdpch`, `ussltor`
+- TypeScript: `expinf`, `exptp`
 
-**Enjoy!**
+### Development
+
+Snippet sources are stored in `example/`. Run the build command to regenerate `snippets/snippets.json`:
+
+```bash
+npm run build
+```
+
+To add a snippet, create a `.tsx` file under the relevant `example/` subdirectory, include the `@name`, `@prefix`, and `@description` comments, then rebuild and test the prefix in the VS Code Extension Host.

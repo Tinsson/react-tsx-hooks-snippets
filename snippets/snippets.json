@@ -16,7 +16,7 @@
   },
   "ImportHooksAll": {
     "prefix": "imhall",
-    "body": "import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react'",
+    "body": "import React, { useActionState, useCallback, useContext, useDebugValue, useDeferredValue, useEffect, useEffectEvent, useId, useImperativeHandle, useInsertionEffect, useLayoutEffect, useMemo, useOptimistic, useReducer, useRef, useState, useSyncExternalStore, useTransition } from 'react'",
     "description": "Import All Hooks"
   },
   "ImportReactHooksState": {
@@ -156,6 +156,11 @@
     ],
     "description": "React Function Memo Component"
   },
+  "useActionState": {
+    "prefix": "usactst",
+    "body": "const [${1:state}, ${2:formAction}, ${3:isPending}] = useActionState(${4:action}, ${5:initialState});",
+    "description": "React useActionState"
+  },
   "useCallback": {
     "prefix": "uscb",
     "body": [
@@ -178,6 +183,11 @@
     "body": "useDebugValue(${1:value})",
     "description": "react useDebugValue"
   },
+  "useDeferredValue": {
+    "prefix": "usdfrv",
+    "body": "const ${1:deferredValue} = useDeferredValue(${2:value})",
+    "description": "react useDeferredValue"
+  },
   "useEffect": {
     "prefix": "use",
     "body": [
@@ -189,6 +199,26 @@
       "}, [${3:deps}]);"
     ],
     "description": "React useEffect"
+  },
+  "useEffectEvent": {
+    "prefix": "useevt",
+    "body": [
+      "const ${1:onEvent} = useEffectEvent((${2}) => {",
+      "  ${3}",
+      "})",
+      ""
+    ],
+    "description": "react useEffectEvent"
+  },
+  "useFormStatus": {
+    "prefix": "usfmsts",
+    "body": "const { ${1:pending}, ${2:data}, ${3:method}, ${4:action} } = useFormStatus()",
+    "description": "react-dom useFormStatus"
+  },
+  "useId": {
+    "prefix": "usid",
+    "body": "const ${1:id} = useId()",
+    "description": "react useId"
   },
   "useImperativeHandle": {
     "prefix": "usimphd",
@@ -202,6 +232,19 @@
       ")"
     ],
     "description": "react useImperativeHandle"
+  },
+  "useInsertionEffect": {
+    "prefix": "usinsfx",
+    "body": [
+      "useInsertionEffect(() => {",
+      "  ${1:effect}",
+      "  return () => {",
+      "    ${2:cleanup}",
+      "  };",
+      "}, [${3:deps}]);",
+      ""
+    ],
+    "description": "react useInsertionEffect"
   },
   "useLayoutEffect": {
     "prefix": "usle",
@@ -220,6 +263,16 @@
     "body": "const ${1:memoizedValue} = useMemo(() => ${2:computedLogic}), [${3:deps}])",
     "description": "react useMemo"
   },
+  "useOptimistic": {
+    "prefix": "usopt",
+    "body": [
+      "const [${1:optimisticState}, ${2:addOptimistic}] = useOptimistic(${3:state}, (${4:currentState}, ${5:optimisticValue}) => {",
+      "  ${6:return optimisticValue}",
+      "})",
+      ""
+    ],
+    "description": "react useOptimistic"
+  },
   "useReducer": {
     "prefix": "usrdcer",
     "body": "const [${1:state},${2: dispatch}] = useReducer(${3:reducer}, ${4:initialArg}, ${5:init});",
@@ -234,6 +287,16 @@
     "prefix": "uss",
     "body": "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<${3:type}>(${2:initialState})",
     "description": "Hooks useState"
+  },
+  "useSyncExternalStore": {
+    "prefix": "ussxstr",
+    "body": "const ${1:snapshot} = useSyncExternalStore(${2:subscribe}, ${3:getSnapshot}, ${4:getServerSnapshot})",
+    "description": "react useSyncExternalStore"
+  },
+  "useTransition": {
+    "prefix": "ustrs",
+    "body": "const [${1:isPending}, ${2:startTransition}] = useTransition()",
+    "description": "react useTransition"
   },
   "ImportReduxHooks": {
     "prefix": "imrdxhk",
