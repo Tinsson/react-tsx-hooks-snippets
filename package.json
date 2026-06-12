@@ -1,13 +1,20 @@
 {
   "name": "react-tsx-hooks-snippets",
   "displayName": "React Tsx Hooks Snippets",
-  "description": "This extension provides you react/redux and hooks in typescript for VS code",
+  "description": "This extension provides React, TypeScript, Hooks, Redux snippets and source reference tools for VS Code",
   "publisher": "tinsson",
   "icon": "images/logo.png",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:react-tsx-hooks-snippets.copyAiSourceReference"
+  ],
   "scripts": {
-    "build": "node compiler.js"
+    "vscode:prepublish": "npm run build",
+    "build": "node compiler.js && tsc -p ./",
+    "build:snippets": "node compiler.js",
+    "compile": "tsc -p ./"
   },
-  "version": "0.0.1",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.51.0"
   },
@@ -15,6 +22,21 @@
     "Snippets"
   ],
   "contributes": {
+    "commands": [
+      {
+        "command": "react-tsx-hooks-snippets.copyAiSourceReference",
+        "title": "Copy AI Source Reference",
+        "category": "AI Source Reference"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "react-tsx-hooks-snippets.copyAiSourceReference",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorTextFocus"
+      }
+    ],
     "snippets": [
       {
         "language": "typescript",
@@ -25,5 +47,10 @@
         "path": "./snippets/snippets.json"
       }
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "1.51.0",
+    "typescript": "^5.8.0"
   }
 }

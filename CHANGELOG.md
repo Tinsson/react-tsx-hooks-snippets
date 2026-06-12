@@ -6,4 +6,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+- Add `Copy AI Source Reference` command for copying file path, nearest symbol, line range, and code for AI agents.
+- Add React 19 hooks snippets.

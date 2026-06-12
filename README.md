@@ -1,8 +1,6 @@
 # React Tsx Hooks Snippets
 
-React Tsx Hooks Snippets 是一个 VS Code 代码片段扩展，提供 React、React Hooks、Redux 和 TypeScript/TSX 常用模板。扩展支持 `typescript` 和 `typescriptreact` 文件。
-
-![logo](images/logo.png)
+React Tsx Hooks Snippets 是一个 VS Code 代码片段扩展，提供 React、React Hooks、Redux、TypeScript/TSX 常用模板，以及源码定位复制工具。扩展支持 `typescript` 和 `typescriptreact` 文件。
 
 ## 功能特性
 
@@ -10,6 +8,7 @@ React Tsx Hooks Snippets 是一个 VS Code 代码片段扩展，提供 React、R
 - 提供 React 19 Hooks 片段：`useState`、`useEffect`、`useActionState`、`useOptimistic`、`useTransition`、`useSyncExternalStore` 等。
 - 提供 Redux 常用片段：action、reducer、selector、`useDispatch`、`useSelector`、connect 类组件。
 - 提供 TypeScript 导出片段：`interface` 和 `type`。
+- 提供 AI 源码定位复制命令，一键复制文件路径、符号名、行号范围和代码片段。
 
 ## 使用方式
 
@@ -27,6 +26,31 @@ const ${1:${TM_FILENAME_BASE}} = (props: Props) => {
   )
 }
 ```
+
+## AI 源码定位复制
+
+在编辑器中选中代码，或把光标放在目标行上，然后执行命令：
+
+- 命令面板：`Copy AI Source Reference`
+- macOS 快捷键：`Cmd+Alt+S`
+- Windows/Linux 快捷键：`Ctrl+Alt+S`
+
+命令会先保存当前文件，再复制适合粘贴给 AI agent 的 Markdown 文本：
+
+````md
+File: src/components/UserCard.tsx
+Symbol: UserCard
+Kind: Function
+Range: L12-L38
+
+```tsx
+const UserCard = ({ user }: Props) => {
+  return <div>{user.name}</div>
+}
+```
+````
+
+符号信息来自 VS Code 的 Document Symbol Provider，可识别函数、类、方法、interface、type、变量和常见 React 组件。如果当前文件没有可用符号信息，会自动降级为 `Unknown`。
 
 ## 片段列表
 
@@ -104,7 +128,7 @@ npm run build
 
 ## English
 
-React Tsx Hooks Snippets is a VS Code snippets extension for React, React Hooks, Redux, and TypeScript/TSX. It contributes snippets to both `typescript` and `typescriptreact` files.
+React Tsx Hooks Snippets is a VS Code snippets extension for React, React Hooks, Redux, TypeScript/TSX, and source reference workflows. It contributes snippets to both `typescript` and `typescriptreact` files.
 
 ### Features
 
@@ -112,6 +136,7 @@ React Tsx Hooks Snippets is a VS Code snippets extension for React, React Hooks,
 - React 19 Hooks snippets, including `useState`, `useEffect`, `useActionState`, `useOptimistic`, `useTransition`, and `useSyncExternalStore`.
 - Redux snippets for actions, reducers, selectors, `useDispatch`, `useSelector`, and connected class components.
 - TypeScript export snippets for `interface` and `type`.
+- AI source reference command for copying file paths, symbols, line ranges, and code blocks for AI agents.
 
 ### Usage
 
@@ -124,6 +149,16 @@ Common prefixes:
 - React 19 / DOM hooks: `usdfrv`, `useevt`, `usid`, `usinsfx`, `ussxstr`, `usfmsts`
 - Redux: `rdxact`, `rdxrdcer`, `rdxsltor`, `usdpch`, `ussltor`
 - TypeScript: `expinf`, `exptp`
+
+### AI Source Reference
+
+Select code, or place the cursor on a target line, then run:
+
+- Command Palette: `Copy AI Source Reference`
+- macOS: `Cmd+Alt+S`
+- Windows/Linux: `Ctrl+Alt+S`
+
+The command saves the current file, then copies Markdown with the workspace-relative file path, nearest symbol, symbol kind, line range, and code block. Symbol detection uses VS Code's Document Symbol Provider and falls back to `Unknown` when symbol data is unavailable.
 
 ### Development
 
